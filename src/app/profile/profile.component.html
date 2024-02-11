@@ -1,0 +1,27 @@
+<div *ngIf="currentUser">
+  <h2>Welcome, {{ currentUser.displayName }}!</h2>
+  <h3>Your Quizzes:</h3>
+  <div *ngFor="let quiz of userQuizzes;let i = index">
+
+    <div>
+      <strong>Quiz ID:</strong> {{ quiz.id }}
+    </div>
+    <div>
+      <strong>Attempts:</strong> {{ quiz.attempts?.length }}
+    </div>
+    <div *ngIf="quiz.attempts">
+      <button (click)="toggleDetails(quiz)">Show Details</button>
+      <div *ngIf="quiz.showDetails">
+        <h4>User Attempts:</h4>
+        <div *ngFor="let attempt of quiz.attempts">
+          <div>
+            <strong>User:</strong> {{ attempt.userFullName }}
+          </div>
+          <div>
+            <strong>Score:</strong> {{ attempt.score }} / {{ attempt.answers.length }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

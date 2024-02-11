@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ngquiz-67921": {
+      "hosting": {
+        "ngquiz": [
+          "ngquiz-67921"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ngquiz-67921"
+  }
+}

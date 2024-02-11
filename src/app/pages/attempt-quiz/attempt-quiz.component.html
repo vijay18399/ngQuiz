@@ -1,0 +1,25 @@
+
+<main *ngIf="quiz" >
+  <input-model  *ngIf="!userFullName" (emitName)="onEmitName($event)"></input-model>
+  <section>
+    <div class="title-container">
+      <div class="questionTrack">
+        {{currentQuestionIndex+1}}/{{quiz.questions.length}}
+        </div>
+      <button  (click)="submitQuiz()" [disabled]="!allQuestionsAnswered()" class="submitBtn">
+          Submit
+      </button>
+    </div>
+    <question [forWhat]="'attempt'"    [question]="quiz.questions[currentQuestionIndex]" ></question>
+    <div class="nav-container">
+      <button (click)="prevQuestion()" [disabled]="currentQuestionIndex === 0" class="prev">
+          Previous
+      </button>
+      <button (click)="nextQuestion()" [disabled]="currentQuestionIndex === quiz.questions.length - 1" class="next">
+          Next
+      </button>
+    </div>
+  </section>
+</main>
+
+

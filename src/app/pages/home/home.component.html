@@ -1,0 +1,38 @@
+<!-- <div class="landing-page">
+  <h1>Welcome to the Quiz App!</h1>
+  <p>Discover how well your friends know you by taking the quiz.</p>
+  <button routerLink="/create">Know How Much Your Friends Know You</button>
+
+  <div *ngIf="!authService.isLogged" class="login-section">
+    <h1>Welcome to the Home Page</h1>
+    <button (click)="login()">Login with Google</button>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="logo-container">
+    <img class="logo-img" src="assets/images/appLogo.png" alt="">
+    <h1>ngQuizz</h1>
+  </div>
+  <div class="btn-group">
+    <button *ngIf="!authService.isLogged"  class="btn" (click)="login()">
+      <div class="icon-wrapper">
+        <img class="icon" src="assets/images/google.png"/>
+      </div>
+      <p class="btn-text"><b>Continue with google</b></p>
+    </button>
+    <a *ngIf="authService.isLogged"  class="btn" routerLink="/create">
+      <div class="icon-wrapper">
+        <img class="icon" src="assets/images/quiz.png"/>
+      </div>
+      <p class="btn-text"><b>Create a Quizz</b></p>
+    </a>
+    <a *ngIf="authService.isLogged"  class="btn" routerLink="/profile">
+      <div class="icon-wrapper">
+        <img class="icon" src="assets/images/quizzes.png"/>
+      </div>
+      <p class="btn-text"><b>My Quizzes</b></p>
+    </a>
+  </div>
+
+</div>

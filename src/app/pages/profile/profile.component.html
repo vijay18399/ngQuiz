@@ -1,0 +1,33 @@
+
+<div *ngIf="currentUser">
+
+  <div class="toolbar">
+    <h2>Welcome, {{ currentUser.displayName }}!</h2>
+    <button (click)="logout()">Logout</button>
+  </div>
+  <div class="breadcrumb">
+    <a routerLink="/">Home</a>
+    <span class="separator">></span>
+    <span>Your Quizzes</span>
+  </div>
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Quiz ID</th>
+        <th>Attempts</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quiz of userQuizzes; let i = index" class="quiz-item">
+        <td>{{ quiz.id }}</td>
+        <td>{{ quiz.attempts?.length }}</td>
+        <td class="details-section">
+          <a   [routerLink]="['/attempts',quiz.id]"  >
+            View Attempts <i class="fas fa-arrow-right"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

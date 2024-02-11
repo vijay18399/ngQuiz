@@ -1,0 +1,15 @@
+<div class="toolbar">
+  <h2>Quiz Attempts</h2>
+</div>
+
+<div class="attempts-list">
+  <div *ngFor="let attempt of quiz?.attempts" class="attempt-item">
+    <div class="user-info">
+      <p>{{ attempt.userFullName }}</p>
+      <p>{{ attempt.score }} / {{ quiz.questions.length }}</p>
+    </div>
+    <div class="date-info">
+      <p>{{ attempt.createdAt | date:'medium' }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="score">
+      <h5>Oye {{this.attempt.userFullName}}</h5>
+      <p>
+        {{getScoreText()}}
+      </p>
+    </div>
+  <div  class="questions">
+    <div *ngIf="quiz && quiz.questions.length" class="question">
+      <question *ngFor="let question of quiz.questions"  [forWhat]="'answer'"    [question]="question" ></question>
+    </div>
+    </div>
+</div>
+

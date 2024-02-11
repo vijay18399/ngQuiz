@@ -1,0 +1,23 @@
+
+<main *ngIf="questions.length > 0" >
+  <section>
+    <div class="title-container">
+      <div class="questionTrack">
+        {{currentQuestionIndex+1}}/{{questions.length}}
+        </div>
+      <button (click)="createQuizz()"  [disabled]="!atLeastAnswered(5)" class="submitBtn">
+          Create Quizz
+      </button>
+    </div>
+    <question [forWhat]="'creation'"  [question]="questions[currentQuestionIndex]" ></question>
+    <div class="nav-container">
+      <button (click)="prevQuestion()" [disabled]="currentQuestionIndex === 0" class="prev">
+          Previous
+      </button>
+      <button (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1" class="next">
+          Next
+      </button>
+    </div>
+  </section>
+</main>
+

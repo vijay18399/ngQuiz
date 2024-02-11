@@ -1,0 +1,99 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+
+  h2 {
+    margin: 0;
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+/* Add these styles to your component's SCSS file */
+
+.breadcrumb {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: #555;
+
+  a {
+    text-decoration: none;
+    color: #4285f4;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #1a73e8;
+    }
+  }
+
+  .separator {
+    margin: 0 8px;
+    color: #777;
+  }
+}
+
+.quiz-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #333;
+    color: white;
+  }
+
+  .quiz-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .details-section {
+    display: flex;
+    align-items: center;
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .attempt-details {
+    margin-top: 10px;
+  }
+}
+
+.quiz-item {
+  margin-top: 10px;
+}
